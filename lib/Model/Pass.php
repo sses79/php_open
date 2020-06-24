@@ -59,7 +59,9 @@ class Pass implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'ref_id' => 'string',
-        'dynamic_data' => 'string'
+        'dynamic_data' => 'string',
+        'event_reference' => '\OpenAPI\Client\Model\Event',
+        'template_reference' => '\OpenAPI\Client\Model\Template'
     ];
 
     /**
@@ -70,7 +72,9 @@ class Pass implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'ref_id' => null,
-        'dynamic_data' => null
+        'dynamic_data' => null,
+        'event_reference' => null,
+        'template_reference' => null
     ];
 
     /**
@@ -102,7 +106,9 @@ class Pass implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'ref_id' => 'refId',
-        'dynamic_data' => 'dynamicData'
+        'dynamic_data' => 'dynamicData',
+        'event_reference' => 'eventReference',
+        'template_reference' => 'templateReference'
     ];
 
     /**
@@ -113,7 +119,9 @@ class Pass implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'ref_id' => 'setRefId',
-        'dynamic_data' => 'setDynamicData'
+        'dynamic_data' => 'setDynamicData',
+        'event_reference' => 'setEventReference',
+        'template_reference' => 'setTemplateReference'
     ];
 
     /**
@@ -124,7 +132,9 @@ class Pass implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'ref_id' => 'getRefId',
-        'dynamic_data' => 'getDynamicData'
+        'dynamic_data' => 'getDynamicData',
+        'event_reference' => 'getEventReference',
+        'template_reference' => 'getTemplateReference'
     ];
 
     /**
@@ -190,6 +200,8 @@ class Pass implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['ref_id'] = isset($data['ref_id']) ? $data['ref_id'] : null;
         $this->container['dynamic_data'] = isset($data['dynamic_data']) ? $data['dynamic_data'] : null;
+        $this->container['event_reference'] = isset($data['event_reference']) ? $data['event_reference'] : null;
+        $this->container['template_reference'] = isset($data['template_reference']) ? $data['template_reference'] : null;
     }
 
     /**
@@ -209,6 +221,12 @@ class Pass implements ModelInterface, ArrayAccess
         }
         if ($this->container['dynamic_data'] === null) {
             $invalidProperties[] = "'dynamic_data' can't be null";
+        }
+        if ($this->container['event_reference'] === null) {
+            $invalidProperties[] = "'event_reference' can't be null";
+        }
+        if ($this->container['template_reference'] === null) {
+            $invalidProperties[] = "'template_reference' can't be null";
         }
         return $invalidProperties;
     }
@@ -293,6 +311,54 @@ class Pass implements ModelInterface, ArrayAccess
     public function setDynamicData($dynamic_data)
     {
         $this->container['dynamic_data'] = $dynamic_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_reference
+     *
+     * @return \OpenAPI\Client\Model\Event
+     */
+    public function getEventReference()
+    {
+        return $this->container['event_reference'];
+    }
+
+    /**
+     * Sets event_reference
+     *
+     * @param \OpenAPI\Client\Model\Event $event_reference event_reference
+     *
+     * @return $this
+     */
+    public function setEventReference($event_reference)
+    {
+        $this->container['event_reference'] = $event_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets template_reference
+     *
+     * @return \OpenAPI\Client\Model\Template
+     */
+    public function getTemplateReference()
+    {
+        return $this->container['template_reference'];
+    }
+
+    /**
+     * Sets template_reference
+     *
+     * @param \OpenAPI\Client\Model\Template $template_reference template_reference
+     *
+     * @return $this
+     */
+    public function setTemplateReference($template_reference)
+    {
+        $this->container['template_reference'] = $template_reference;
 
         return $this;
     }

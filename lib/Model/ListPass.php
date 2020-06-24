@@ -1,6 +1,6 @@
 <?php
 /**
- * NewPass
+ * ListPass
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * NewPass Class Doc Comment
+ * ListPass Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class NewPass implements ModelInterface, ArrayAccess
+class ListPass implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NewPass implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewPass';
+    protected static $openAPIModelName = 'ListPass';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,6 +57,7 @@ class NewPass implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
         'ref_id' => 'string',
         'dynamic_data' => 'string',
         'event_id' => 'string',
@@ -69,6 +70,7 @@ class NewPass implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'ref_id' => null,
         'dynamic_data' => null,
         'event_id' => null,
@@ -102,6 +104,7 @@ class NewPass implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'ref_id' => 'refId',
         'dynamic_data' => 'dynamicData',
         'event_id' => 'event_id',
@@ -114,6 +117,7 @@ class NewPass implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'ref_id' => 'setRefId',
         'dynamic_data' => 'setDynamicData',
         'event_id' => 'setEventId',
@@ -126,6 +130,7 @@ class NewPass implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'ref_id' => 'getRefId',
         'dynamic_data' => 'getDynamicData',
         'event_id' => 'getEventId',
@@ -192,6 +197,7 @@ class NewPass implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['ref_id'] = isset($data['ref_id']) ? $data['ref_id'] : null;
         $this->container['dynamic_data'] = isset($data['dynamic_data']) ? $data['dynamic_data'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
@@ -207,6 +213,9 @@ class NewPass implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
         if ($this->container['ref_id'] === null) {
             $invalidProperties[] = "'ref_id' can't be null";
         }
@@ -233,6 +242,30 @@ class NewPass implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id ID
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets ref_id

@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Event](docs/Model/Event.md)
+ - [ListPass](docs/Model/ListPass.md)
  - [NewEvent](docs/Model/NewEvent.md)
  - [NewPass](docs/Model/NewPass.md)
  - [NewTemplate](docs/Model/NewTemplate.md)

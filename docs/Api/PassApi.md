@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ## passIndexPut
 
-> \OpenAPI\Client\Model\Pass passIndexPut($pass)
+> \OpenAPI\Client\Model\Pass passIndexPut($list_pass)
 
 
 
@@ -158,10 +158,10 @@ $apiInstance = new OpenAPI\Client\Api\PassApi(
     new GuzzleHttp\Client(),
     $config
 );
-$pass = new \OpenAPI\Client\Model\Pass(); // \OpenAPI\Client\Model\Pass | 
+$list_pass = new \OpenAPI\Client\Model\ListPass(); // \OpenAPI\Client\Model\ListPass | 
 
 try {
-    $result = $apiInstance->passIndexPut($pass);
+    $result = $apiInstance->passIndexPut($list_pass);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PassApi->passIndexPut: ', $e->getMessage(), PHP_EOL;
@@ -174,7 +174,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pass** | [**\OpenAPI\Client\Model\Pass**](../Model/Pass.md)|  |
+ **list_pass** | [**\OpenAPI\Client\Model\ListPass**](../Model/ListPass.md)|  |
 
 ### Return type
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ## passesIndexGet
 
-> \OpenAPI\Client\Model\Pass[] passesIndexGet()
+> \OpenAPI\Client\Model\ListPass[] passesIndexGet()
 
 
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Pass[]**](../Model/Pass.md)
+[**\OpenAPI\Client\Model\ListPass[]**](../Model/ListPass.md)
 
 ### Authorization
 

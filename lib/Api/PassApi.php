@@ -659,30 +659,30 @@ class PassApi
     /**
      * Operation passIndexPut
      *
-     * @param  \OpenAPI\Client\Model\Pass $pass pass (required)
+     * @param  \OpenAPI\Client\Model\ListPass $list_pass list_pass (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Pass
      */
-    public function passIndexPut($pass)
+    public function passIndexPut($list_pass)
     {
-        list($response) = $this->passIndexPutWithHttpInfo($pass);
+        list($response) = $this->passIndexPutWithHttpInfo($list_pass);
         return $response;
     }
 
     /**
      * Operation passIndexPutWithHttpInfo
      *
-     * @param  \OpenAPI\Client\Model\Pass $pass (required)
+     * @param  \OpenAPI\Client\Model\ListPass $list_pass (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Pass, HTTP status code, HTTP response headers (array of strings)
      */
-    public function passIndexPutWithHttpInfo($pass)
+    public function passIndexPutWithHttpInfo($list_pass)
     {
-        $request = $this->passIndexPutRequest($pass);
+        $request = $this->passIndexPutRequest($list_pass);
 
         try {
             $options = $this->createHttpClientOption();
@@ -762,14 +762,14 @@ class PassApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\Pass $pass (required)
+     * @param  \OpenAPI\Client\Model\ListPass $list_pass (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function passIndexPutAsync($pass)
+    public function passIndexPutAsync($list_pass)
     {
-        return $this->passIndexPutAsyncWithHttpInfo($pass)
+        return $this->passIndexPutAsyncWithHttpInfo($list_pass)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -782,15 +782,15 @@ class PassApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\Pass $pass (required)
+     * @param  \OpenAPI\Client\Model\ListPass $list_pass (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function passIndexPutAsyncWithHttpInfo($pass)
+    public function passIndexPutAsyncWithHttpInfo($list_pass)
     {
         $returnType = '\OpenAPI\Client\Model\Pass';
-        $request = $this->passIndexPutRequest($pass);
+        $request = $this->passIndexPutRequest($list_pass);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -829,17 +829,17 @@ class PassApi
     /**
      * Create request for operation 'passIndexPut'
      *
-     * @param  \OpenAPI\Client\Model\Pass $pass (required)
+     * @param  \OpenAPI\Client\Model\ListPass $list_pass (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function passIndexPutRequest($pass)
+    protected function passIndexPutRequest($list_pass)
     {
-        // verify the required parameter 'pass' is set
-        if ($pass === null || (is_array($pass) && count($pass) === 0)) {
+        // verify the required parameter 'list_pass' is set
+        if ($list_pass === null || (is_array($list_pass) && count($list_pass) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $pass when calling passIndexPut'
+                'Missing the required parameter $list_pass when calling passIndexPut'
             );
         }
 
@@ -855,8 +855,8 @@ class PassApi
 
         // body params
         $_tempBody = null;
-        if (isset($pass)) {
-            $_tempBody = $pass;
+        if (isset($list_pass)) {
+            $_tempBody = $list_pass;
         }
 
         if ($multipart) {
@@ -930,7 +930,7 @@ class PassApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Pass[]
+     * @return \OpenAPI\Client\Model\ListPass[]
      */
     public function passesIndexGet()
     {
@@ -944,7 +944,7 @@ class PassApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Pass[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ListPass[], HTTP status code, HTTP response headers (array of strings)
      */
     public function passesIndexGetWithHttpInfo()
     {
@@ -981,20 +981,20 @@ class PassApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Pass[]' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ListPass[]' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Pass[]', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListPass[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Pass[]';
+            $returnType = '\OpenAPI\Client\Model\ListPass[]';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1013,7 +1013,7 @@ class PassApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Pass[]',
+                        '\OpenAPI\Client\Model\ListPass[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1053,7 +1053,7 @@ class PassApi
      */
     public function passesIndexGetAsyncWithHttpInfo()
     {
-        $returnType = '\OpenAPI\Client\Model\Pass[]';
+        $returnType = '\OpenAPI\Client\Model\ListPass[]';
         $request = $this->passesIndexGetRequest();
 
         return $this->client
