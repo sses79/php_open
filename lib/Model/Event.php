@@ -61,7 +61,13 @@ class Event implements ModelInterface, ArrayAccess
         'title' => 'string',
         'description' => 'string',
         'venue' => 'string',
-        'date' => 'string'
+        'passbook_cert_id' => 'string',
+        'status' => 'string',
+        'start_date' => 'string',
+        'end_date' => 'string',
+        'google_service_account' => 'string',
+        'google_issuer_id' => 'string',
+        'meta' => 'string'
     ];
 
     /**
@@ -74,7 +80,13 @@ class Event implements ModelInterface, ArrayAccess
         'title' => null,
         'description' => null,
         'venue' => null,
-        'date' => null
+        'passbook_cert_id' => null,
+        'status' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'google_service_account' => null,
+        'google_issuer_id' => null,
+        'meta' => null
     ];
 
     /**
@@ -108,7 +120,13 @@ class Event implements ModelInterface, ArrayAccess
         'title' => 'title',
         'description' => 'description',
         'venue' => 'venue',
-        'date' => 'date'
+        'passbook_cert_id' => 'passbook_cert_id',
+        'status' => 'status',
+        'start_date' => 'start_date',
+        'end_date' => 'end_date',
+        'google_service_account' => 'google_service_account',
+        'google_issuer_id' => 'google_issuer_id',
+        'meta' => 'meta'
     ];
 
     /**
@@ -121,7 +139,13 @@ class Event implements ModelInterface, ArrayAccess
         'title' => 'setTitle',
         'description' => 'setDescription',
         'venue' => 'setVenue',
-        'date' => 'setDate'
+        'passbook_cert_id' => 'setPassbookCertId',
+        'status' => 'setStatus',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'google_service_account' => 'setGoogleServiceAccount',
+        'google_issuer_id' => 'setGoogleIssuerId',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -134,7 +158,13 @@ class Event implements ModelInterface, ArrayAccess
         'title' => 'getTitle',
         'description' => 'getDescription',
         'venue' => 'getVenue',
-        'date' => 'getDate'
+        'passbook_cert_id' => 'getPassbookCertId',
+        'status' => 'getStatus',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'google_service_account' => 'getGoogleServiceAccount',
+        'google_issuer_id' => 'getGoogleIssuerId',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -201,7 +231,13 @@ class Event implements ModelInterface, ArrayAccess
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['venue'] = isset($data['venue']) ? $data['venue'] : null;
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['passbook_cert_id'] = isset($data['passbook_cert_id']) ? $data['passbook_cert_id'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['google_service_account'] = isset($data['google_service_account']) ? $data['google_service_account'] : null;
+        $this->container['google_issuer_id'] = isset($data['google_issuer_id']) ? $data['google_issuer_id'] : null;
+        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
     }
 
     /**
@@ -225,8 +261,8 @@ class Event implements ModelInterface, ArrayAccess
         if ($this->container['venue'] === null) {
             $invalidProperties[] = "'venue' can't be null";
         }
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
+        if ($this->container['start_date'] === null) {
+            $invalidProperties[] = "'start_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -340,25 +376,169 @@ class Event implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets date
+     * Gets passbook_cert_id
      *
-     * @return string
+     * @return string|null
      */
-    public function getDate()
+    public function getPassbookCertId()
     {
-        return $this->container['date'];
+        return $this->container['passbook_cert_id'];
     }
 
     /**
-     * Sets date
+     * Sets passbook_cert_id
      *
-     * @param string $date Date
+     * @param string|null $passbook_cert_id Passbook Certificate ID
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setPassbookCertId($passbook_cert_id)
     {
-        $this->container['date'] = $date;
+        $this->container['passbook_cert_id'] = $passbook_cert_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status Status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     *
+     * @return string
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     *
+     * @param string $start_date ISO8601 datetime
+     *
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     *
+     * @return string|null
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     *
+     * @param string|null $end_date ISO8601 datetime
+     *
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets google_service_account
+     *
+     * @return string|null
+     */
+    public function getGoogleServiceAccount()
+    {
+        return $this->container['google_service_account'];
+    }
+
+    /**
+     * Sets google_service_account
+     *
+     * @param string|null $google_service_account Google Service Account
+     *
+     * @return $this
+     */
+    public function setGoogleServiceAccount($google_service_account)
+    {
+        $this->container['google_service_account'] = $google_service_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets google_issuer_id
+     *
+     * @return string|null
+     */
+    public function getGoogleIssuerId()
+    {
+        return $this->container['google_issuer_id'];
+    }
+
+    /**
+     * Sets google_issuer_id
+     *
+     * @param string|null $google_issuer_id googleIssuerId
+     *
+     * @return $this
+     */
+    public function setGoogleIssuerId($google_issuer_id)
+    {
+        $this->container['google_issuer_id'] = $google_issuer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return string|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param string|null $meta JSON Object
+     *
+     * @return $this
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }
