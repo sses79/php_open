@@ -58,6 +58,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'logo_img' => 'string',
+        'strip_img' => 'string',
+        'gate_label' => 'string',
+        'row_label' => 'string',
+        'section_label' => 'string',
         'passbook' => 'string'
     ];
 
@@ -68,6 +73,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'logo_img' => null,
+        'strip_img' => null,
+        'gate_label' => null,
+        'row_label' => null,
+        'section_label' => null,
         'passbook' => null
     ];
 
@@ -99,6 +109,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'logo_img' => 'logo_img',
+        'strip_img' => 'strip_img',
+        'gate_label' => 'gate_label',
+        'row_label' => 'row_label',
+        'section_label' => 'section_label',
         'passbook' => 'passbook'
     ];
 
@@ -109,6 +124,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'logo_img' => 'setLogoImg',
+        'strip_img' => 'setStripImg',
+        'gate_label' => 'setGateLabel',
+        'row_label' => 'setRowLabel',
+        'section_label' => 'setSectionLabel',
         'passbook' => 'setPassbook'
     ];
 
@@ -119,6 +139,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'logo_img' => 'getLogoImg',
+        'strip_img' => 'getStripImg',
+        'gate_label' => 'getGateLabel',
+        'row_label' => 'getRowLabel',
+        'section_label' => 'getSectionLabel',
         'passbook' => 'getPassbook'
     ];
 
@@ -183,6 +208,11 @@ class NewTemplate implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['logo_img'] = isset($data['logo_img']) ? $data['logo_img'] : null;
+        $this->container['strip_img'] = isset($data['strip_img']) ? $data['strip_img'] : null;
+        $this->container['gate_label'] = isset($data['gate_label']) ? $data['gate_label'] : null;
+        $this->container['row_label'] = isset($data['row_label']) ? $data['row_label'] : null;
+        $this->container['section_label'] = isset($data['section_label']) ? $data['section_label'] : null;
         $this->container['passbook'] = isset($data['passbook']) ? $data['passbook'] : null;
     }
 
@@ -236,6 +266,126 @@ class NewTemplate implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_img
+     *
+     * @return string|null
+     */
+    public function getLogoImg()
+    {
+        return $this->container['logo_img'];
+    }
+
+    /**
+     * Sets logo_img
+     *
+     * @param string|null $logo_img Logo image URI
+     *
+     * @return $this
+     */
+    public function setLogoImg($logo_img)
+    {
+        $this->container['logo_img'] = $logo_img;
+
+        return $this;
+    }
+
+    /**
+     * Gets strip_img
+     *
+     * @return string|null
+     */
+    public function getStripImg()
+    {
+        return $this->container['strip_img'];
+    }
+
+    /**
+     * Sets strip_img
+     *
+     * @param string|null $strip_img Logo image URI
+     *
+     * @return $this
+     */
+    public function setStripImg($strip_img)
+    {
+        $this->container['strip_img'] = $strip_img;
+
+        return $this;
+    }
+
+    /**
+     * Gets gate_label
+     *
+     * @return string|null
+     */
+    public function getGateLabel()
+    {
+        return $this->container['gate_label'];
+    }
+
+    /**
+     * Sets gate_label
+     *
+     * @param string|null $gate_label Gate label
+     *
+     * @return $this
+     */
+    public function setGateLabel($gate_label)
+    {
+        $this->container['gate_label'] = $gate_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_label
+     *
+     * @return string|null
+     */
+    public function getRowLabel()
+    {
+        return $this->container['row_label'];
+    }
+
+    /**
+     * Sets row_label
+     *
+     * @param string|null $row_label Row label
+     *
+     * @return $this
+     */
+    public function setRowLabel($row_label)
+    {
+        $this->container['row_label'] = $row_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets section_label
+     *
+     * @return string|null
+     */
+    public function getSectionLabel()
+    {
+        return $this->container['section_label'];
+    }
+
+    /**
+     * Sets section_label
+     *
+     * @param string|null $section_label Logo image URI
+     *
+     * @return $this
+     */
+    public function setSectionLabel($section_label)
+    {
+        $this->container['section_label'] = $section_label;
 
         return $this;
     }
