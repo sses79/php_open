@@ -59,6 +59,7 @@ class Template implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
+        'bg_color' => 'string',
         'logo_img' => 'string',
         'strip_img' => 'string',
         'gate_label' => 'string',
@@ -75,6 +76,7 @@ class Template implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
+        'bg_color' => null,
         'logo_img' => null,
         'strip_img' => null,
         'gate_label' => null,
@@ -112,6 +114,7 @@ class Template implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
+        'bg_color' => 'bg_color',
         'logo_img' => 'logo_img',
         'strip_img' => 'strip_img',
         'gate_label' => 'gate_label',
@@ -128,6 +131,7 @@ class Template implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
+        'bg_color' => 'setBgColor',
         'logo_img' => 'setLogoImg',
         'strip_img' => 'setStripImg',
         'gate_label' => 'setGateLabel',
@@ -144,6 +148,7 @@ class Template implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
+        'bg_color' => 'getBgColor',
         'logo_img' => 'getLogoImg',
         'strip_img' => 'getStripImg',
         'gate_label' => 'getGateLabel',
@@ -214,6 +219,7 @@ class Template implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['bg_color'] = isset($data['bg_color']) ? $data['bg_color'] : null;
         $this->container['logo_img'] = isset($data['logo_img']) ? $data['logo_img'] : null;
         $this->container['strip_img'] = isset($data['strip_img']) ? $data['strip_img'] : null;
         $this->container['gate_label'] = isset($data['gate_label']) ? $data['gate_label'] : null;
@@ -299,6 +305,30 @@ class Template implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bg_color
+     *
+     * @return string|null
+     */
+    public function getBgColor()
+    {
+        return $this->container['bg_color'];
+    }
+
+    /**
+     * Sets bg_color
+     *
+     * @param string|null $bg_color Background color
+     *
+     * @return $this
+     */
+    public function setBgColor($bg_color)
+    {
+        $this->container['bg_color'] = $bg_color;
 
         return $this;
     }
