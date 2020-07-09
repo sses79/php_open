@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **title** | **string** | Title | 
 **description** | **string** | Description | 
 **venue** | **string** | Venue | 
+**venue_address** | **string** | Venue address | [optional] 
 **passbook_cert_id** | **string** | Passbook Certificate ID | [optional] 
 **status** | **string** | Status | [optional] 
 **start_date** | **string** | ISO8601 datetime | 

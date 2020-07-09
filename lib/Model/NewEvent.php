@@ -60,6 +60,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         'title' => 'string',
         'description' => 'string',
         'venue' => 'string',
+        'venue_address' => 'string',
         'passbook_cert_id' => 'string',
         'status' => 'string',
         'start_date' => 'string',
@@ -78,6 +79,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         'title' => null,
         'description' => null,
         'venue' => null,
+        'venue_address' => null,
         'passbook_cert_id' => null,
         'status' => null,
         'start_date' => null,
@@ -117,6 +119,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         'title' => 'title',
         'description' => 'description',
         'venue' => 'venue',
+        'venue_address' => 'venue_address',
         'passbook_cert_id' => 'passbook_cert_id',
         'status' => 'status',
         'start_date' => 'start_date',
@@ -135,6 +138,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         'title' => 'setTitle',
         'description' => 'setDescription',
         'venue' => 'setVenue',
+        'venue_address' => 'setVenueAddress',
         'passbook_cert_id' => 'setPassbookCertId',
         'status' => 'setStatus',
         'start_date' => 'setStartDate',
@@ -153,6 +157,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         'title' => 'getTitle',
         'description' => 'getDescription',
         'venue' => 'getVenue',
+        'venue_address' => 'getVenueAddress',
         'passbook_cert_id' => 'getPassbookCertId',
         'status' => 'getStatus',
         'start_date' => 'getStartDate',
@@ -225,6 +230,7 @@ class NewEvent implements ModelInterface, ArrayAccess
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['venue'] = isset($data['venue']) ? $data['venue'] : null;
+        $this->container['venue_address'] = isset($data['venue_address']) ? $data['venue_address'] : null;
         $this->container['passbook_cert_id'] = isset($data['passbook_cert_id']) ? $data['passbook_cert_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
@@ -338,6 +344,30 @@ class NewEvent implements ModelInterface, ArrayAccess
     public function setVenue($venue)
     {
         $this->container['venue'] = $venue;
+
+        return $this;
+    }
+
+    /**
+     * Gets venue_address
+     *
+     * @return string|null
+     */
+    public function getVenueAddress()
+    {
+        return $this->container['venue_address'];
+    }
+
+    /**
+     * Sets venue_address
+     *
+     * @param string|null $venue_address Venue address
+     *
+     * @return $this
+     */
+    public function setVenueAddress($venue_address)
+    {
+        $this->container['venue_address'] = $venue_address;
 
         return $this;
     }
