@@ -58,13 +58,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'logo_text' => 'string',
         'bg_color' => 'string',
         'logo_img' => 'string',
         'strip_img' => 'string',
         'gate_label' => 'string',
         'row_label' => 'string',
         'section_label' => 'string',
-        'passbook' => 'string'
+        'website_label' => 'string',
+        'website_value' => 'string'
     ];
 
     /**
@@ -74,13 +76,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'logo_text' => null,
         'bg_color' => null,
         'logo_img' => null,
         'strip_img' => null,
         'gate_label' => null,
         'row_label' => null,
         'section_label' => null,
-        'passbook' => null
+        'website_label' => null,
+        'website_value' => null
     ];
 
     /**
@@ -111,13 +115,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'logo_text' => 'logo_text',
         'bg_color' => 'bg_color',
         'logo_img' => 'logo_img',
         'strip_img' => 'strip_img',
         'gate_label' => 'gate_label',
         'row_label' => 'row_label',
         'section_label' => 'section_label',
-        'passbook' => 'passbook'
+        'website_label' => 'website_label',
+        'website_value' => 'website_value'
     ];
 
     /**
@@ -127,13 +133,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
+        'logo_text' => 'setLogoText',
         'bg_color' => 'setBgColor',
         'logo_img' => 'setLogoImg',
         'strip_img' => 'setStripImg',
         'gate_label' => 'setGateLabel',
         'row_label' => 'setRowLabel',
         'section_label' => 'setSectionLabel',
-        'passbook' => 'setPassbook'
+        'website_label' => 'setWebsiteLabel',
+        'website_value' => 'setWebsiteValue'
     ];
 
     /**
@@ -143,13 +151,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
+        'logo_text' => 'getLogoText',
         'bg_color' => 'getBgColor',
         'logo_img' => 'getLogoImg',
         'strip_img' => 'getStripImg',
         'gate_label' => 'getGateLabel',
         'row_label' => 'getRowLabel',
         'section_label' => 'getSectionLabel',
-        'passbook' => 'getPassbook'
+        'website_label' => 'getWebsiteLabel',
+        'website_value' => 'getWebsiteValue'
     ];
 
     /**
@@ -213,13 +223,15 @@ class NewTemplate implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['logo_text'] = isset($data['logo_text']) ? $data['logo_text'] : null;
         $this->container['bg_color'] = isset($data['bg_color']) ? $data['bg_color'] : null;
         $this->container['logo_img'] = isset($data['logo_img']) ? $data['logo_img'] : null;
         $this->container['strip_img'] = isset($data['strip_img']) ? $data['strip_img'] : null;
         $this->container['gate_label'] = isset($data['gate_label']) ? $data['gate_label'] : null;
         $this->container['row_label'] = isset($data['row_label']) ? $data['row_label'] : null;
         $this->container['section_label'] = isset($data['section_label']) ? $data['section_label'] : null;
-        $this->container['passbook'] = isset($data['passbook']) ? $data['passbook'] : null;
+        $this->container['website_label'] = isset($data['website_label']) ? $data['website_label'] : null;
+        $this->container['website_value'] = isset($data['website_value']) ? $data['website_value'] : null;
     }
 
     /**
@@ -234,8 +246,8 @@ class NewTemplate implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['passbook'] === null) {
-            $invalidProperties[] = "'passbook' can't be null";
+        if ($this->container['logo_text'] === null) {
+            $invalidProperties[] = "'logo_text' can't be null";
         }
         return $invalidProperties;
     }
@@ -272,6 +284,30 @@ class NewTemplate implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_text
+     *
+     * @return string
+     */
+    public function getLogoText()
+    {
+        return $this->container['logo_text'];
+    }
+
+    /**
+     * Sets logo_text
+     *
+     * @param string $logo_text Logo text
+     *
+     * @return $this
+     */
+    public function setLogoText($logo_text)
+    {
+        $this->container['logo_text'] = $logo_text;
 
         return $this;
     }
@@ -421,25 +457,49 @@ class NewTemplate implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets passbook
+     * Gets website_label
      *
-     * @return string
+     * @return string|null
      */
-    public function getPassbook()
+    public function getWebsiteLabel()
     {
-        return $this->container['passbook'];
+        return $this->container['website_label'];
     }
 
     /**
-     * Sets passbook
+     * Sets website_label
      *
-     * @param string $passbook Passbook
+     * @param string|null $website_label Website Label
      *
      * @return $this
      */
-    public function setPassbook($passbook)
+    public function setWebsiteLabel($website_label)
     {
-        $this->container['passbook'] = $passbook;
+        $this->container['website_label'] = $website_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets website_value
+     *
+     * @return string|null
+     */
+    public function getWebsiteValue()
+    {
+        return $this->container['website_value'];
+    }
+
+    /**
+     * Sets website_value
+     *
+     * @param string|null $website_value Website value
+     *
+     * @return $this
+     */
+    public function setWebsiteValue($website_value)
+    {
+        $this->container['website_value'] = $website_value;
 
         return $this;
     }
