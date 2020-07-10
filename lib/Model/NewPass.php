@@ -58,7 +58,11 @@ class NewPass implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'ref_id' => 'string',
-        'dynamic_data' => 'string',
+        'token' => 'string',
+        'gate' => 'string',
+        'seat' => 'string',
+        'section' => 'string',
+        'ticket_holder' => 'string',
         'event_id' => 'string',
         'template_id' => 'string'
     ];
@@ -70,7 +74,11 @@ class NewPass implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'ref_id' => null,
-        'dynamic_data' => null,
+        'token' => null,
+        'gate' => null,
+        'seat' => null,
+        'section' => null,
+        'ticket_holder' => null,
         'event_id' => null,
         'template_id' => null
     ];
@@ -103,7 +111,11 @@ class NewPass implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'ref_id' => 'refId',
-        'dynamic_data' => 'dynamicData',
+        'token' => 'token',
+        'gate' => 'gate',
+        'seat' => 'seat',
+        'section' => 'section',
+        'ticket_holder' => 'ticket_holder',
         'event_id' => 'event_id',
         'template_id' => 'template_id'
     ];
@@ -115,7 +127,11 @@ class NewPass implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'ref_id' => 'setRefId',
-        'dynamic_data' => 'setDynamicData',
+        'token' => 'setToken',
+        'gate' => 'setGate',
+        'seat' => 'setSeat',
+        'section' => 'setSection',
+        'ticket_holder' => 'setTicketHolder',
         'event_id' => 'setEventId',
         'template_id' => 'setTemplateId'
     ];
@@ -127,7 +143,11 @@ class NewPass implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'ref_id' => 'getRefId',
-        'dynamic_data' => 'getDynamicData',
+        'token' => 'getToken',
+        'gate' => 'getGate',
+        'seat' => 'getSeat',
+        'section' => 'getSection',
+        'ticket_holder' => 'getTicketHolder',
         'event_id' => 'getEventId',
         'template_id' => 'getTemplateId'
     ];
@@ -193,7 +213,11 @@ class NewPass implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['ref_id'] = isset($data['ref_id']) ? $data['ref_id'] : null;
-        $this->container['dynamic_data'] = isset($data['dynamic_data']) ? $data['dynamic_data'] : null;
+        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['gate'] = isset($data['gate']) ? $data['gate'] : null;
+        $this->container['seat'] = isset($data['seat']) ? $data['seat'] : null;
+        $this->container['section'] = isset($data['section']) ? $data['section'] : null;
+        $this->container['ticket_holder'] = isset($data['ticket_holder']) ? $data['ticket_holder'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
         $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
     }
@@ -210,8 +234,8 @@ class NewPass implements ModelInterface, ArrayAccess
         if ($this->container['ref_id'] === null) {
             $invalidProperties[] = "'ref_id' can't be null";
         }
-        if ($this->container['dynamic_data'] === null) {
-            $invalidProperties[] = "'dynamic_data' can't be null";
+        if ($this->container['token'] === null) {
+            $invalidProperties[] = "'token' can't be null";
         }
         if ($this->container['event_id'] === null) {
             $invalidProperties[] = "'event_id' can't be null";
@@ -259,25 +283,121 @@ class NewPass implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets dynamic_data
+     * Gets token
      *
      * @return string
      */
-    public function getDynamicData()
+    public function getToken()
     {
-        return $this->container['dynamic_data'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets dynamic_data
+     * Sets token
      *
-     * @param string $dynamic_data Dynamic Data
+     * @param string $token Token
      *
      * @return $this
      */
-    public function setDynamicData($dynamic_data)
+    public function setToken($token)
     {
-        $this->container['dynamic_data'] = $dynamic_data;
+        $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets gate
+     *
+     * @return string|null
+     */
+    public function getGate()
+    {
+        return $this->container['gate'];
+    }
+
+    /**
+     * Sets gate
+     *
+     * @param string|null $gate Gate info
+     *
+     * @return $this
+     */
+    public function setGate($gate)
+    {
+        $this->container['gate'] = $gate;
+
+        return $this;
+    }
+
+    /**
+     * Gets seat
+     *
+     * @return string|null
+     */
+    public function getSeat()
+    {
+        return $this->container['seat'];
+    }
+
+    /**
+     * Sets seat
+     *
+     * @param string|null $seat Seat info
+     *
+     * @return $this
+     */
+    public function setSeat($seat)
+    {
+        $this->container['seat'] = $seat;
+
+        return $this;
+    }
+
+    /**
+     * Gets section
+     *
+     * @return string|null
+     */
+    public function getSection()
+    {
+        return $this->container['section'];
+    }
+
+    /**
+     * Sets section
+     *
+     * @param string|null $section Row info
+     *
+     * @return $this
+     */
+    public function setSection($section)
+    {
+        $this->container['section'] = $section;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticket_holder
+     *
+     * @return string|null
+     */
+    public function getTicketHolder()
+    {
+        return $this->container['ticket_holder'];
+    }
+
+    /**
+     * Sets ticket_holder
+     *
+     * @param string|null $ticket_holder Ticket holder
+     *
+     * @return $this
+     */
+    public function setTicketHolder($ticket_holder)
+    {
+        $this->container['ticket_holder'] = $ticket_holder;
 
         return $this;
     }

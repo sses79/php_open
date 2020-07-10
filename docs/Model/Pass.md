@@ -6,7 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | ID | 
 **ref_id** | **string** | Ref Id | 
-**dynamic_data** | **string** | Dynamic Data | 
+**token** | **string** | Token | 
+**gate** | **string** | Gate info | [optional] 
+**seat** | **string** | Seat info | [optional] 
+**section** | **string** | Row info | [optional] 
+**ticket_holder** | **string** | Ticket holder | [optional] 
 **event_reference** | [**\OpenAPI\Client\Model\Event**](Event.md) |  | 
 **template_reference** | [**\OpenAPI\Client\Model\Template**](Template.md) |  | 
 
