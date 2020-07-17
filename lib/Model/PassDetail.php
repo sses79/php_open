@@ -65,6 +65,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         'section' => 'string',
         'ticket_holder' => 'string',
         'status' => 'string',
+        'meta' => 'string',
         'pkpass' => 'string',
         'jwt' => 'string',
         'pass_created_at' => 'string',
@@ -87,6 +88,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         'section' => null,
         'ticket_holder' => null,
         'status' => null,
+        'meta' => null,
         'pkpass' => null,
         'jwt' => null,
         'pass_created_at' => null,
@@ -130,6 +132,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         'section' => 'section',
         'ticket_holder' => 'ticket_holder',
         'status' => 'status',
+        'meta' => 'meta',
         'pkpass' => 'pkpass',
         'jwt' => 'jwt',
         'pass_created_at' => 'pass_created_at',
@@ -152,6 +155,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         'section' => 'setSection',
         'ticket_holder' => 'setTicketHolder',
         'status' => 'setStatus',
+        'meta' => 'setMeta',
         'pkpass' => 'setPkpass',
         'jwt' => 'setJwt',
         'pass_created_at' => 'setPassCreatedAt',
@@ -174,6 +178,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         'section' => 'getSection',
         'ticket_holder' => 'getTicketHolder',
         'status' => 'getStatus',
+        'meta' => 'getMeta',
         'pkpass' => 'getPkpass',
         'jwt' => 'getJwt',
         'pass_created_at' => 'getPassCreatedAt',
@@ -250,6 +255,7 @@ class PassDetail implements ModelInterface, ArrayAccess
         $this->container['section'] = isset($data['section']) ? $data['section'] : null;
         $this->container['ticket_holder'] = isset($data['ticket_holder']) ? $data['ticket_holder'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
         $this->container['pkpass'] = isset($data['pkpass']) ? $data['pkpass'] : null;
         $this->container['jwt'] = isset($data['jwt']) ? $data['jwt'] : null;
         $this->container['pass_created_at'] = isset($data['pass_created_at']) ? $data['pass_created_at'] : null;
@@ -485,6 +491,30 @@ class PassDetail implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return string|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param string|null $meta Meta Data
+     *
+     * @return $this
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

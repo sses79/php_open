@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **section** | **string** | Row info | [optional] 
 **ticket_holder** | **string** | Ticket holder | [optional] 
 **status** | **string** | Event Id | [optional] 
+**meta** | **string** | Meta Data | [optional] 
 **pkpass** | **string** | Apple Wallet pkpass link | [optional] 
 **jwt** | **string** | Google pay pass jwt link | [optional] 
 **pass_created_at** | **string** | Generated pass create time | [optional] 
