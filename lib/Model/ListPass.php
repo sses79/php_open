@@ -65,7 +65,12 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'string',
         'ticket_holder' => 'string',
         'event_id' => 'string',
-        'template_id' => 'string'
+        'template_id' => 'string',
+        'status' => 'string',
+        'pkpass' => 'string',
+        'jwt' => 'string',
+        'pass_created_at' => 'string',
+        'pass_updated_at' => 'string'
     ];
 
     /**
@@ -82,7 +87,12 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => null,
         'ticket_holder' => null,
         'event_id' => null,
-        'template_id' => null
+        'template_id' => null,
+        'status' => null,
+        'pkpass' => null,
+        'jwt' => null,
+        'pass_created_at' => null,
+        'pass_updated_at' => null
     ];
 
     /**
@@ -120,7 +130,12 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'section',
         'ticket_holder' => 'ticket_holder',
         'event_id' => 'event_id',
-        'template_id' => 'template_id'
+        'template_id' => 'template_id',
+        'status' => 'status',
+        'pkpass' => 'pkpass',
+        'jwt' => 'jwt',
+        'pass_created_at' => 'pass_created_at',
+        'pass_updated_at' => 'pass_updated_at'
     ];
 
     /**
@@ -137,7 +152,12 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'setSection',
         'ticket_holder' => 'setTicketHolder',
         'event_id' => 'setEventId',
-        'template_id' => 'setTemplateId'
+        'template_id' => 'setTemplateId',
+        'status' => 'setStatus',
+        'pkpass' => 'setPkpass',
+        'jwt' => 'setJwt',
+        'pass_created_at' => 'setPassCreatedAt',
+        'pass_updated_at' => 'setPassUpdatedAt'
     ];
 
     /**
@@ -154,7 +174,12 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'getSection',
         'ticket_holder' => 'getTicketHolder',
         'event_id' => 'getEventId',
-        'template_id' => 'getTemplateId'
+        'template_id' => 'getTemplateId',
+        'status' => 'getStatus',
+        'pkpass' => 'getPkpass',
+        'jwt' => 'getJwt',
+        'pass_created_at' => 'getPassCreatedAt',
+        'pass_updated_at' => 'getPassUpdatedAt'
     ];
 
     /**
@@ -226,6 +251,11 @@ class ListPass implements ModelInterface, ArrayAccess
         $this->container['ticket_holder'] = isset($data['ticket_holder']) ? $data['ticket_holder'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
         $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['pkpass'] = isset($data['pkpass']) ? $data['pkpass'] : null;
+        $this->container['jwt'] = isset($data['jwt']) ? $data['jwt'] : null;
+        $this->container['pass_created_at'] = isset($data['pass_created_at']) ? $data['pass_created_at'] : null;
+        $this->container['pass_updated_at'] = isset($data['pass_updated_at']) ? $data['pass_updated_at'] : null;
     }
 
     /**
@@ -479,6 +509,126 @@ class ListPass implements ModelInterface, ArrayAccess
     public function setTemplateId($template_id)
     {
         $this->container['template_id'] = $template_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status Event Id
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets pkpass
+     *
+     * @return string|null
+     */
+    public function getPkpass()
+    {
+        return $this->container['pkpass'];
+    }
+
+    /**
+     * Sets pkpass
+     *
+     * @param string|null $pkpass Apple Wallet pkpass link
+     *
+     * @return $this
+     */
+    public function setPkpass($pkpass)
+    {
+        $this->container['pkpass'] = $pkpass;
+
+        return $this;
+    }
+
+    /**
+     * Gets jwt
+     *
+     * @return string|null
+     */
+    public function getJwt()
+    {
+        return $this->container['jwt'];
+    }
+
+    /**
+     * Sets jwt
+     *
+     * @param string|null $jwt Google pay pass jwt link
+     *
+     * @return $this
+     */
+    public function setJwt($jwt)
+    {
+        $this->container['jwt'] = $jwt;
+
+        return $this;
+    }
+
+    /**
+     * Gets pass_created_at
+     *
+     * @return string|null
+     */
+    public function getPassCreatedAt()
+    {
+        return $this->container['pass_created_at'];
+    }
+
+    /**
+     * Sets pass_created_at
+     *
+     * @param string|null $pass_created_at Generated pass create time
+     *
+     * @return $this
+     */
+    public function setPassCreatedAt($pass_created_at)
+    {
+        $this->container['pass_created_at'] = $pass_created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets pass_updated_at
+     *
+     * @return string|null
+     */
+    public function getPassUpdatedAt()
+    {
+        return $this->container['pass_updated_at'];
+    }
+
+    /**
+     * Sets pass_updated_at
+     *
+     * @param string|null $pass_updated_at Generated pass create time
+     *
+     * @return $this
+     */
+    public function setPassUpdatedAt($pass_updated_at)
+    {
+        $this->container['pass_updated_at'] = $pass_updated_at;
 
         return $this;
     }
