@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
  - [NewPass](docs/Model/NewPass.md)
  - [NewTemplate](docs/Model/NewTemplate.md)
  - [Pass](docs/Model/Pass.md)
+ - [PassDetail](docs/Model/PassDetail.md)
  - [Template](docs/Model/Template.md)
 
 

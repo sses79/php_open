@@ -122,7 +122,7 @@ class PassApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Pass
+     * @return \OpenAPI\Client\Model\PassDetail
      */
     public function passIndexGet($id)
     {
@@ -137,7 +137,7 @@ class PassApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Pass, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\PassDetail, HTTP status code, HTTP response headers (array of strings)
      */
     public function passIndexGetWithHttpInfo($id)
     {
@@ -174,20 +174,20 @@ class PassApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Pass' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\PassDetail' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Pass', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\PassDetail', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Pass';
+            $returnType = '\OpenAPI\Client\Model\PassDetail';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -206,7 +206,7 @@ class PassApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Pass',
+                        '\OpenAPI\Client\Model\PassDetail',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,7 +248,7 @@ class PassApi
      */
     public function passIndexGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\OpenAPI\Client\Model\Pass';
+        $returnType = '\OpenAPI\Client\Model\PassDetail';
         $request = $this->passIndexGetRequest($id);
 
         return $this->client

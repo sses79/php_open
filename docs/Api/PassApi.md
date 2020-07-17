@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## passIndexGet
 
-> \OpenAPI\Client\Model\Pass passIndexGet($id)
+> \OpenAPI\Client\Model\PassDetail passIndexGet($id)
 
 
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Pass**](../Model/Pass.md)
+[**\OpenAPI\Client\Model\PassDetail**](../Model/PassDetail.md)
 
 ### Authorization
 
