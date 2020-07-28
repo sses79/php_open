@@ -64,7 +64,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\EventApi(
+$apiInstance = new OpenAPI\Client\Api\AppleCertificateApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -73,10 +73,10 @@ $apiInstance = new OpenAPI\Client\Api\EventApi(
 $id = 'id_example'; // string | 
 
 try {
-    $result = $apiInstance->eventIndexGet($id);
+    $result = $apiInstance->certIndexGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EventApi->eventIndexGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AppleCertificateApi->certIndexGet: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -88,6 +88,10 @@ All URIs are relative to *http://passkit.test*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AppleCertificateApi* | [**certIndexGet**](docs/Api/AppleCertificateApi.md#certindexget) | **GET** /api/cert/{id} | 
+*AppleCertificateApi* | [**certIndexPost**](docs/Api/AppleCertificateApi.md#certindexpost) | **POST** /api/cert | 
+*AppleCertificateApi* | [**certIndexPut**](docs/Api/AppleCertificateApi.md#certindexput) | **PUT** /api/cert | 
+*AppleCertificateApi* | [**certsIndexGet**](docs/Api/AppleCertificateApi.md#certsindexget) | **GET** /api/certs | 
 *EventApi* | [**eventIndexGet**](docs/Api/EventApi.md#eventindexget) | **GET** /api/event/{id} | 
 *EventApi* | [**eventIndexPost**](docs/Api/EventApi.md#eventindexpost) | **POST** /api/event | 
 *EventApi* | [**eventIndexPut**](docs/Api/EventApi.md#eventindexput) | **PUT** /api/event | 
@@ -104,8 +108,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Cert](docs/Model/Cert.md)
  - [Event](docs/Model/Event.md)
+ - [ListCert](docs/Model/ListCert.md)
  - [ListPass](docs/Model/ListPass.md)
+ - [NewCert](docs/Model/NewCert.md)
  - [NewEvent](docs/Model/NewEvent.md)
  - [NewPass](docs/Model/NewPass.md)
  - [NewTemplate](docs/Model/NewTemplate.md)
