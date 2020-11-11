@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** | Name | 
 **logo_text** | **string** | Logo text | 
 **bg_color** | **string** | Background color | [optional] 
+**font_color** | **string** | Font color | [optional] 
 **logo_img** | **string** | Logo image URI | [optional] 
 **strip_img** | **string** | Logo image URI | [optional] 
 **gate_label** | **string** | Gate label | [optional] 

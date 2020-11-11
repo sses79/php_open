@@ -61,6 +61,7 @@ class Template implements ModelInterface, ArrayAccess
         'name' => 'string',
         'logo_text' => 'string',
         'bg_color' => 'string',
+        'font_color' => 'string',
         'logo_img' => 'string',
         'strip_img' => 'string',
         'gate_label' => 'string',
@@ -80,6 +81,7 @@ class Template implements ModelInterface, ArrayAccess
         'name' => null,
         'logo_text' => null,
         'bg_color' => null,
+        'font_color' => null,
         'logo_img' => null,
         'strip_img' => null,
         'gate_label' => null,
@@ -120,6 +122,7 @@ class Template implements ModelInterface, ArrayAccess
         'name' => 'name',
         'logo_text' => 'logo_text',
         'bg_color' => 'bg_color',
+        'font_color' => 'font_color',
         'logo_img' => 'logo_img',
         'strip_img' => 'strip_img',
         'gate_label' => 'gate_label',
@@ -139,6 +142,7 @@ class Template implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'logo_text' => 'setLogoText',
         'bg_color' => 'setBgColor',
+        'font_color' => 'setFontColor',
         'logo_img' => 'setLogoImg',
         'strip_img' => 'setStripImg',
         'gate_label' => 'setGateLabel',
@@ -158,6 +162,7 @@ class Template implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'logo_text' => 'getLogoText',
         'bg_color' => 'getBgColor',
+        'font_color' => 'getFontColor',
         'logo_img' => 'getLogoImg',
         'strip_img' => 'getStripImg',
         'gate_label' => 'getGateLabel',
@@ -231,6 +236,7 @@ class Template implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['logo_text'] = isset($data['logo_text']) ? $data['logo_text'] : null;
         $this->container['bg_color'] = isset($data['bg_color']) ? $data['bg_color'] : null;
+        $this->container['font_color'] = isset($data['font_color']) ? $data['font_color'] : null;
         $this->container['logo_img'] = isset($data['logo_img']) ? $data['logo_img'] : null;
         $this->container['strip_img'] = isset($data['strip_img']) ? $data['strip_img'] : null;
         $this->container['gate_label'] = isset($data['gate_label']) ? $data['gate_label'] : null;
@@ -365,6 +371,30 @@ class Template implements ModelInterface, ArrayAccess
     public function setBgColor($bg_color)
     {
         $this->container['bg_color'] = $bg_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets font_color
+     *
+     * @return string|null
+     */
+    public function getFontColor()
+    {
+        return $this->container['font_color'];
+    }
+
+    /**
+     * Sets font_color
+     *
+     * @param string|null $font_color Font color
+     *
+     * @return $this
+     */
+    public function setFontColor($font_color)
+    {
+        $this->container['font_color'] = $font_color;
 
         return $this;
     }
