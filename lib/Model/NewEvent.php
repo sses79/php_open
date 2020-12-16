@@ -65,8 +65,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         'status' => 'string',
         'start_date' => 'string',
         'end_date' => 'string',
-        'google_service_account' => 'string',
-        'google_issuer_id' => 'string',
+        'google_c_id' => 'string',
+        'template_id' => 'string',
         'meta' => 'string'
     ];
 
@@ -84,8 +84,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         'status' => null,
         'start_date' => null,
         'end_date' => null,
-        'google_service_account' => null,
-        'google_issuer_id' => null,
+        'google_c_id' => null,
+        'template_id' => null,
         'meta' => null
     ];
 
@@ -124,8 +124,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         'status' => 'status',
         'start_date' => 'start_date',
         'end_date' => 'end_date',
-        'google_service_account' => 'google_service_account',
-        'google_issuer_id' => 'google_issuer_id',
+        'google_c_id' => 'google_c_id',
+        'template_id' => 'template_id',
         'meta' => 'meta'
     ];
 
@@ -143,8 +143,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'google_service_account' => 'setGoogleServiceAccount',
-        'google_issuer_id' => 'setGoogleIssuerId',
+        'google_c_id' => 'setGoogleCId',
+        'template_id' => 'setTemplateId',
         'meta' => 'setMeta'
     ];
 
@@ -162,8 +162,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'google_service_account' => 'getGoogleServiceAccount',
-        'google_issuer_id' => 'getGoogleIssuerId',
+        'google_c_id' => 'getGoogleCId',
+        'template_id' => 'getTemplateId',
         'meta' => 'getMeta'
     ];
 
@@ -235,8 +235,8 @@ class NewEvent implements ModelInterface, ArrayAccess
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['google_service_account'] = isset($data['google_service_account']) ? $data['google_service_account'] : null;
-        $this->container['google_issuer_id'] = isset($data['google_issuer_id']) ? $data['google_issuer_id'] : null;
+        $this->container['google_c_id'] = isset($data['google_c_id']) ? $data['google_c_id'] : null;
+        $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
         $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
     }
 
@@ -469,49 +469,49 @@ class NewEvent implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets google_service_account
+     * Gets google_c_id
      *
      * @return string|null
      */
-    public function getGoogleServiceAccount()
+    public function getGoogleCId()
     {
-        return $this->container['google_service_account'];
+        return $this->container['google_c_id'];
     }
 
     /**
-     * Sets google_service_account
+     * Sets google_c_id
      *
-     * @param string|null $google_service_account Google Service Account
+     * @param string|null $google_c_id Google Credential ID
      *
      * @return $this
      */
-    public function setGoogleServiceAccount($google_service_account)
+    public function setGoogleCId($google_c_id)
     {
-        $this->container['google_service_account'] = $google_service_account;
+        $this->container['google_c_id'] = $google_c_id;
 
         return $this;
     }
 
     /**
-     * Gets google_issuer_id
+     * Gets template_id
      *
      * @return string|null
      */
-    public function getGoogleIssuerId()
+    public function getTemplateId()
     {
-        return $this->container['google_issuer_id'];
+        return $this->container['template_id'];
     }
 
     /**
-     * Sets google_issuer_id
+     * Sets template_id
      *
-     * @param string|null $google_issuer_id googleIssuerId
+     * @param string|null $template_id Template Id
      *
      * @return $this
      */
-    public function setGoogleIssuerId($google_issuer_id)
+    public function setTemplateId($template_id)
     {
-        $this->container['google_issuer_id'] = $google_issuer_id;
+        $this->container['template_id'] = $template_id;
 
         return $this;
     }

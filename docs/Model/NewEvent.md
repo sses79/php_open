@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **status** | **string** | Status | [optional] 
 **start_date** | **string** | ISO8601 datetime | 
 **end_date** | **string** | ISO8601 datetime | [optional] 
-**google_service_account** | **string** | Google Service Account | [optional] 
-**google_issuer_id** | **string** | googleIssuerId | [optional] 
+**google_c_id** | **string** | Google Credential ID | [optional] 
+**template_id** | **string** | Template Id | [optional] 
 **meta** | **string** | JSON Object | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
