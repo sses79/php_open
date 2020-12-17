@@ -96,6 +96,10 @@ Class | Method | HTTP request | Description
 *EventApi* | [**eventIndexPost**](docs/Api/EventApi.md#eventindexpost) | **POST** /api/event | 
 *EventApi* | [**eventIndexPut**](docs/Api/EventApi.md#eventindexput) | **PUT** /api/event | 
 *EventApi* | [**eventsIndexGet**](docs/Api/EventApi.md#eventsindexget) | **GET** /api/events | 
+*GoogleCredentialApi* | [**credentialIndexGet**](docs/Api/GoogleCredentialApi.md#credentialindexget) | **GET** /api/credential/{id} | 
+*GoogleCredentialApi* | [**credentialIndexPost**](docs/Api/GoogleCredentialApi.md#credentialindexpost) | **POST** /api/credential | 
+*GoogleCredentialApi* | [**credentialIndexPut**](docs/Api/GoogleCredentialApi.md#credentialindexput) | **PUT** /api/credential | 
+*GoogleCredentialApi* | [**credentialsIndexGet**](docs/Api/GoogleCredentialApi.md#credentialsindexget) | **GET** /api/credentials | 
 *PassApi* | [**passIndexGet**](docs/Api/PassApi.md#passindexget) | **GET** /api/pass/{id} | 
 *PassApi* | [**passIndexPost**](docs/Api/PassApi.md#passindexpost) | **POST** /api/pass | 
 *PassApi* | [**passIndexPut**](docs/Api/PassApi.md#passindexput) | **PUT** /api/pass | 
@@ -109,10 +113,13 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Cert](docs/Model/Cert.md)
+ - [Credential](docs/Model/Credential.md)
  - [Event](docs/Model/Event.md)
  - [ListCert](docs/Model/ListCert.md)
+ - [ListCredential](docs/Model/ListCredential.md)
  - [ListPass](docs/Model/ListPass.md)
  - [NewCert](docs/Model/NewCert.md)
+ - [NewCredential](docs/Model/NewCredential.md)
  - [NewEvent](docs/Model/NewEvent.md)
  - [NewPass](docs/Model/NewPass.md)
  - [NewTemplate](docs/Model/NewTemplate.md)
