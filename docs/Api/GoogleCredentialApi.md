@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## credentialIndexPost
 
-> \OpenAPI\Client\Model\Credential credentialIndexPost($list_credential)
+> \OpenAPI\Client\Model\ListCredential credentialIndexPost($credential)
 
 
 
@@ -97,10 +97,10 @@ $apiInstance = new OpenAPI\Client\Api\GoogleCredentialApi(
     new GuzzleHttp\Client(),
     $config
 );
-$list_credential = new \OpenAPI\Client\Model\ListCredential(); // \OpenAPI\Client\Model\ListCredential | 
+$credential = new \OpenAPI\Client\Model\Credential(); // \OpenAPI\Client\Model\Credential | 
 
 try {
-    $result = $apiInstance->credentialIndexPost($list_credential);
+    $result = $apiInstance->credentialIndexPost($credential);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoogleCredentialApi->credentialIndexPost: ', $e->getMessage(), PHP_EOL;
@@ -113,11 +113,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_credential** | [**\OpenAPI\Client\Model\ListCredential**](../Model/ListCredential.md)|  |
+ **credential** | [**\OpenAPI\Client\Model\Credential**](../Model/Credential.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Credential**](../Model/Credential.md)
+[**\OpenAPI\Client\Model\ListCredential**](../Model/ListCredential.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ## credentialIndexPut
 
-> \OpenAPI\Client\Model\Credential credentialIndexPut($list_credential)
+> \OpenAPI\Client\Model\ListCredential credentialIndexPut($credential)
 
 
 
@@ -158,10 +158,10 @@ $apiInstance = new OpenAPI\Client\Api\GoogleCredentialApi(
     new GuzzleHttp\Client(),
     $config
 );
-$list_credential = new \OpenAPI\Client\Model\ListCredential(); // \OpenAPI\Client\Model\ListCredential | 
+$credential = new \OpenAPI\Client\Model\Credential(); // \OpenAPI\Client\Model\Credential | 
 
 try {
-    $result = $apiInstance->credentialIndexPut($list_credential);
+    $result = $apiInstance->credentialIndexPut($credential);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoogleCredentialApi->credentialIndexPut: ', $e->getMessage(), PHP_EOL;
@@ -174,11 +174,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_credential** | [**\OpenAPI\Client\Model\ListCredential**](../Model/ListCredential.md)|  |
+ **credential** | [**\OpenAPI\Client\Model\Credential**](../Model/Credential.md)|  |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Credential**](../Model/Credential.md)
+[**\OpenAPI\Client\Model\ListCredential**](../Model/ListCredential.md)
 
 ### Authorization
 

@@ -391,30 +391,30 @@ class GoogleCredentialApi
     /**
      * Operation credentialIndexPost
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Credential
+     * @return \OpenAPI\Client\Model\ListCredential
      */
-    public function credentialIndexPost($list_credential)
+    public function credentialIndexPost($credential)
     {
-        list($response) = $this->credentialIndexPostWithHttpInfo($list_credential);
+        list($response) = $this->credentialIndexPostWithHttpInfo($credential);
         return $response;
     }
 
     /**
      * Operation credentialIndexPostWithHttpInfo
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Credential, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ListCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function credentialIndexPostWithHttpInfo($list_credential)
+    public function credentialIndexPostWithHttpInfo($credential)
     {
-        $request = $this->credentialIndexPostRequest($list_credential);
+        $request = $this->credentialIndexPostRequest($credential);
 
         try {
             $options = $this->createHttpClientOption();
@@ -447,20 +447,20 @@ class GoogleCredentialApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Credential' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ListCredential' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Credential', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListCredential', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Credential';
+            $returnType = '\OpenAPI\Client\Model\ListCredential';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -479,7 +479,7 @@ class GoogleCredentialApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Credential',
+                        '\OpenAPI\Client\Model\ListCredential',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -494,14 +494,14 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPostAsync($list_credential)
+    public function credentialIndexPostAsync($credential)
     {
-        return $this->credentialIndexPostAsyncWithHttpInfo($list_credential)
+        return $this->credentialIndexPostAsyncWithHttpInfo($credential)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -514,15 +514,15 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPostAsyncWithHttpInfo($list_credential)
+    public function credentialIndexPostAsyncWithHttpInfo($credential)
     {
-        $returnType = '\OpenAPI\Client\Model\Credential';
-        $request = $this->credentialIndexPostRequest($list_credential);
+        $returnType = '\OpenAPI\Client\Model\ListCredential';
+        $request = $this->credentialIndexPostRequest($credential);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -561,17 +561,17 @@ class GoogleCredentialApi
     /**
      * Create request for operation 'credentialIndexPost'
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function credentialIndexPostRequest($list_credential)
+    protected function credentialIndexPostRequest($credential)
     {
-        // verify the required parameter 'list_credential' is set
-        if ($list_credential === null || (is_array($list_credential) && count($list_credential) === 0)) {
+        // verify the required parameter 'credential' is set
+        if ($credential === null || (is_array($credential) && count($credential) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $list_credential when calling credentialIndexPost'
+                'Missing the required parameter $credential when calling credentialIndexPost'
             );
         }
 
@@ -587,8 +587,8 @@ class GoogleCredentialApi
 
         // body params
         $_tempBody = null;
-        if (isset($list_credential)) {
-            $_tempBody = $list_credential;
+        if (isset($credential)) {
+            $_tempBody = $credential;
         }
 
         if ($multipart) {
@@ -659,30 +659,30 @@ class GoogleCredentialApi
     /**
      * Operation credentialIndexPut
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Credential
+     * @return \OpenAPI\Client\Model\ListCredential
      */
-    public function credentialIndexPut($list_credential)
+    public function credentialIndexPut($credential)
     {
-        list($response) = $this->credentialIndexPutWithHttpInfo($list_credential);
+        list($response) = $this->credentialIndexPutWithHttpInfo($credential);
         return $response;
     }
 
     /**
      * Operation credentialIndexPutWithHttpInfo
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Credential, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ListCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function credentialIndexPutWithHttpInfo($list_credential)
+    public function credentialIndexPutWithHttpInfo($credential)
     {
-        $request = $this->credentialIndexPutRequest($list_credential);
+        $request = $this->credentialIndexPutRequest($credential);
 
         try {
             $options = $this->createHttpClientOption();
@@ -715,20 +715,20 @@ class GoogleCredentialApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Credential' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ListCredential' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Credential', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListCredential', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Credential';
+            $returnType = '\OpenAPI\Client\Model\ListCredential';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -747,7 +747,7 @@ class GoogleCredentialApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Credential',
+                        '\OpenAPI\Client\Model\ListCredential',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -762,14 +762,14 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPutAsync($list_credential)
+    public function credentialIndexPutAsync($credential)
     {
-        return $this->credentialIndexPutAsyncWithHttpInfo($list_credential)
+        return $this->credentialIndexPutAsyncWithHttpInfo($credential)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -782,15 +782,15 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPutAsyncWithHttpInfo($list_credential)
+    public function credentialIndexPutAsyncWithHttpInfo($credential)
     {
-        $returnType = '\OpenAPI\Client\Model\Credential';
-        $request = $this->credentialIndexPutRequest($list_credential);
+        $returnType = '\OpenAPI\Client\Model\ListCredential';
+        $request = $this->credentialIndexPutRequest($credential);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -829,17 +829,17 @@ class GoogleCredentialApi
     /**
      * Create request for operation 'credentialIndexPut'
      *
-     * @param  \OpenAPI\Client\Model\ListCredential $list_credential (required)
+     * @param  \OpenAPI\Client\Model\Credential $credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function credentialIndexPutRequest($list_credential)
+    protected function credentialIndexPutRequest($credential)
     {
-        // verify the required parameter 'list_credential' is set
-        if ($list_credential === null || (is_array($list_credential) && count($list_credential) === 0)) {
+        // verify the required parameter 'credential' is set
+        if ($credential === null || (is_array($credential) && count($credential) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $list_credential when calling credentialIndexPut'
+                'Missing the required parameter $credential when calling credentialIndexPut'
             );
         }
 
@@ -855,8 +855,8 @@ class GoogleCredentialApi
 
         // body params
         $_tempBody = null;
-        if (isset($list_credential)) {
-            $_tempBody = $list_credential;
+        if (isset($credential)) {
+            $_tempBody = $credential;
         }
 
         if ($multipart) {
