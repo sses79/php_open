@@ -391,30 +391,30 @@ class GoogleCredentialApi
     /**
      * Operation credentialIndexPost
      *
-     * @param  \OpenAPI\Client\Model\Credential $credential credential (required)
+     * @param  \OpenAPI\Client\Model\NewCredential $new_credential new_credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ListCredential
      */
-    public function credentialIndexPost($credential)
+    public function credentialIndexPost($new_credential)
     {
-        list($response) = $this->credentialIndexPostWithHttpInfo($credential);
+        list($response) = $this->credentialIndexPostWithHttpInfo($new_credential);
         return $response;
     }
 
     /**
      * Operation credentialIndexPostWithHttpInfo
      *
-     * @param  \OpenAPI\Client\Model\Credential $credential (required)
+     * @param  \OpenAPI\Client\Model\NewCredential $new_credential (required)
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ListCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function credentialIndexPostWithHttpInfo($credential)
+    public function credentialIndexPostWithHttpInfo($new_credential)
     {
-        $request = $this->credentialIndexPostRequest($credential);
+        $request = $this->credentialIndexPostRequest($new_credential);
 
         try {
             $options = $this->createHttpClientOption();
@@ -494,14 +494,14 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\Credential $credential (required)
+     * @param  \OpenAPI\Client\Model\NewCredential $new_credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPostAsync($credential)
+    public function credentialIndexPostAsync($new_credential)
     {
-        return $this->credentialIndexPostAsyncWithHttpInfo($credential)
+        return $this->credentialIndexPostAsyncWithHttpInfo($new_credential)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -514,15 +514,15 @@ class GoogleCredentialApi
      *
      * 
      *
-     * @param  \OpenAPI\Client\Model\Credential $credential (required)
+     * @param  \OpenAPI\Client\Model\NewCredential $new_credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function credentialIndexPostAsyncWithHttpInfo($credential)
+    public function credentialIndexPostAsyncWithHttpInfo($new_credential)
     {
         $returnType = '\OpenAPI\Client\Model\ListCredential';
-        $request = $this->credentialIndexPostRequest($credential);
+        $request = $this->credentialIndexPostRequest($new_credential);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -561,17 +561,17 @@ class GoogleCredentialApi
     /**
      * Create request for operation 'credentialIndexPost'
      *
-     * @param  \OpenAPI\Client\Model\Credential $credential (required)
+     * @param  \OpenAPI\Client\Model\NewCredential $new_credential (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function credentialIndexPostRequest($credential)
+    protected function credentialIndexPostRequest($new_credential)
     {
-        // verify the required parameter 'credential' is set
-        if ($credential === null || (is_array($credential) && count($credential) === 0)) {
+        // verify the required parameter 'new_credential' is set
+        if ($new_credential === null || (is_array($new_credential) && count($new_credential) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $credential when calling credentialIndexPost'
+                'Missing the required parameter $new_credential when calling credentialIndexPost'
             );
         }
 
@@ -587,8 +587,8 @@ class GoogleCredentialApi
 
         // body params
         $_tempBody = null;
-        if (isset($credential)) {
-            $_tempBody = $credential;
+        if (isset($new_credential)) {
+            $_tempBody = $new_credential;
         }
 
         if ($multipart) {

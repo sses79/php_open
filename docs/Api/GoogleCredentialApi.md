@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## credentialIndexPost
 
-> \OpenAPI\Client\Model\ListCredential credentialIndexPost($credential)
+> \OpenAPI\Client\Model\ListCredential credentialIndexPost($new_credential)
 
 
 
@@ -97,10 +97,10 @@ $apiInstance = new OpenAPI\Client\Api\GoogleCredentialApi(
     new GuzzleHttp\Client(),
     $config
 );
-$credential = new \OpenAPI\Client\Model\Credential(); // \OpenAPI\Client\Model\Credential | 
+$new_credential = new \OpenAPI\Client\Model\NewCredential(); // \OpenAPI\Client\Model\NewCredential | 
 
 try {
-    $result = $apiInstance->credentialIndexPost($credential);
+    $result = $apiInstance->credentialIndexPost($new_credential);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoogleCredentialApi->credentialIndexPost: ', $e->getMessage(), PHP_EOL;
@@ -113,7 +113,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **credential** | [**\OpenAPI\Client\Model\Credential**](../Model/Credential.md)|  |
+ **new_credential** | [**\OpenAPI\Client\Model\NewCredential**](../Model/NewCredential.md)|  |
 
 ### Return type
 
