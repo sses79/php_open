@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **section** | **string** | Row info | [optional] 
 **ticket_holder** | **string** | Ticket holder | [optional] 
 **event_id** | **string** | Event Id | 
-**template_id** | **string** | Template Id | 
 **status** | **string** | Event Id | [optional] 
 **pkpass** | **string** | Apple Wallet pkpass link | [optional] 
 **jwt** | **string** | Google pay pass jwt link | [optional] 

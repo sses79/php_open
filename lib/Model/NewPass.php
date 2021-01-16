@@ -63,8 +63,7 @@ class NewPass implements ModelInterface, ArrayAccess
         'seat' => 'string',
         'section' => 'string',
         'ticket_holder' => 'string',
-        'event_id' => 'string',
-        'template_id' => 'string'
+        'event_id' => 'string'
     ];
 
     /**
@@ -79,8 +78,7 @@ class NewPass implements ModelInterface, ArrayAccess
         'seat' => null,
         'section' => null,
         'ticket_holder' => null,
-        'event_id' => null,
-        'template_id' => null
+        'event_id' => null
     ];
 
     /**
@@ -116,8 +114,7 @@ class NewPass implements ModelInterface, ArrayAccess
         'seat' => 'seat',
         'section' => 'section',
         'ticket_holder' => 'ticket_holder',
-        'event_id' => 'event_id',
-        'template_id' => 'template_id'
+        'event_id' => 'event_id'
     ];
 
     /**
@@ -132,8 +129,7 @@ class NewPass implements ModelInterface, ArrayAccess
         'seat' => 'setSeat',
         'section' => 'setSection',
         'ticket_holder' => 'setTicketHolder',
-        'event_id' => 'setEventId',
-        'template_id' => 'setTemplateId'
+        'event_id' => 'setEventId'
     ];
 
     /**
@@ -148,8 +144,7 @@ class NewPass implements ModelInterface, ArrayAccess
         'seat' => 'getSeat',
         'section' => 'getSection',
         'ticket_holder' => 'getTicketHolder',
-        'event_id' => 'getEventId',
-        'template_id' => 'getTemplateId'
+        'event_id' => 'getEventId'
     ];
 
     /**
@@ -219,7 +214,6 @@ class NewPass implements ModelInterface, ArrayAccess
         $this->container['section'] = isset($data['section']) ? $data['section'] : null;
         $this->container['ticket_holder'] = isset($data['ticket_holder']) ? $data['ticket_holder'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
-        $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
     }
 
     /**
@@ -239,9 +233,6 @@ class NewPass implements ModelInterface, ArrayAccess
         }
         if ($this->container['event_id'] === null) {
             $invalidProperties[] = "'event_id' can't be null";
-        }
-        if ($this->container['template_id'] === null) {
-            $invalidProperties[] = "'template_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -422,30 +413,6 @@ class NewPass implements ModelInterface, ArrayAccess
     public function setEventId($event_id)
     {
         $this->container['event_id'] = $event_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets template_id
-     *
-     * @return string
-     */
-    public function getTemplateId()
-    {
-        return $this->container['template_id'];
-    }
-
-    /**
-     * Sets template_id
-     *
-     * @param string $template_id Template Id
-     *
-     * @return $this
-     */
-    public function setTemplateId($template_id)
-    {
-        $this->container['template_id'] = $template_id;
 
         return $this;
     }

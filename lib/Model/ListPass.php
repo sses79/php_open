@@ -65,7 +65,6 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'string',
         'ticket_holder' => 'string',
         'event_id' => 'string',
-        'template_id' => 'string',
         'status' => 'string',
         'pkpass' => 'string',
         'jwt' => 'string',
@@ -87,7 +86,6 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => null,
         'ticket_holder' => null,
         'event_id' => null,
-        'template_id' => null,
         'status' => null,
         'pkpass' => null,
         'jwt' => null,
@@ -130,7 +128,6 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'section',
         'ticket_holder' => 'ticket_holder',
         'event_id' => 'event_id',
-        'template_id' => 'template_id',
         'status' => 'status',
         'pkpass' => 'pkpass',
         'jwt' => 'jwt',
@@ -152,7 +149,6 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'setSection',
         'ticket_holder' => 'setTicketHolder',
         'event_id' => 'setEventId',
-        'template_id' => 'setTemplateId',
         'status' => 'setStatus',
         'pkpass' => 'setPkpass',
         'jwt' => 'setJwt',
@@ -174,7 +170,6 @@ class ListPass implements ModelInterface, ArrayAccess
         'section' => 'getSection',
         'ticket_holder' => 'getTicketHolder',
         'event_id' => 'getEventId',
-        'template_id' => 'getTemplateId',
         'status' => 'getStatus',
         'pkpass' => 'getPkpass',
         'jwt' => 'getJwt',
@@ -250,7 +245,6 @@ class ListPass implements ModelInterface, ArrayAccess
         $this->container['section'] = isset($data['section']) ? $data['section'] : null;
         $this->container['ticket_holder'] = isset($data['ticket_holder']) ? $data['ticket_holder'] : null;
         $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
-        $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['pkpass'] = isset($data['pkpass']) ? $data['pkpass'] : null;
         $this->container['jwt'] = isset($data['jwt']) ? $data['jwt'] : null;
@@ -278,9 +272,6 @@ class ListPass implements ModelInterface, ArrayAccess
         }
         if ($this->container['event_id'] === null) {
             $invalidProperties[] = "'event_id' can't be null";
-        }
-        if ($this->container['template_id'] === null) {
-            $invalidProperties[] = "'template_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -485,30 +476,6 @@ class ListPass implements ModelInterface, ArrayAccess
     public function setEventId($event_id)
     {
         $this->container['event_id'] = $event_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets template_id
-     *
-     * @return string
-     */
-    public function getTemplateId()
-    {
-        return $this->container['template_id'];
-    }
-
-    /**
-     * Sets template_id
-     *
-     * @param string $template_id Template Id
-     *
-     * @return $this
-     */
-    public function setTemplateId($template_id)
-    {
-        $this->container['template_id'] = $template_id;
 
         return $this;
     }
