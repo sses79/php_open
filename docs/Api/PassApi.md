@@ -4,11 +4,72 @@ All URIs are relative to *http://passkit.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**passEmailIndexPost**](PassApi.md#passEmailIndexPost) | **POST** /api/passemail | 
 [**passIndexGet**](PassApi.md#passIndexGet) | **GET** /api/pass/{id} | 
 [**passIndexPost**](PassApi.md#passIndexPost) | **POST** /api/pass | 
 [**passIndexPut**](PassApi.md#passIndexPut) | **PUT** /api/pass | 
 [**passesIndexGet**](PassApi.md#passesIndexGet) | **GET** /api/passes | 
 
+
+
+## passEmailIndexPost
+
+> passEmailIndexPost($pass_email)
+
+
+
+Send pass by Email
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: passkit_auth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\PassApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$pass_email = new \OpenAPI\Client\Model\PassEmail(); // \OpenAPI\Client\Model\PassEmail | 
+
+try {
+    $apiInstance->passEmailIndexPost($pass_email);
+} catch (Exception $e) {
+    echo 'Exception when calling PassApi->passEmailIndexPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pass_email** | [**\OpenAPI\Client\Model\PassEmail**](../Model/PassEmail.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[passkit_auth](../../README.md#passkit_auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 
 ## passIndexGet

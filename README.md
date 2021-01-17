@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *GoogleCredentialApi* | [**credentialIndexPost**](docs/Api/GoogleCredentialApi.md#credentialindexpost) | **POST** /api/credential | 
 *GoogleCredentialApi* | [**credentialIndexPut**](docs/Api/GoogleCredentialApi.md#credentialindexput) | **PUT** /api/credential | 
 *GoogleCredentialApi* | [**credentialsIndexGet**](docs/Api/GoogleCredentialApi.md#credentialsindexget) | **GET** /api/credentials | 
+*PassApi* | [**passEmailIndexPost**](docs/Api/PassApi.md#passemailindexpost) | **POST** /api/passemail | 
 *PassApi* | [**passIndexGet**](docs/Api/PassApi.md#passindexget) | **GET** /api/pass/{id} | 
 *PassApi* | [**passIndexPost**](docs/Api/PassApi.md#passindexpost) | **POST** /api/pass | 
 *PassApi* | [**passIndexPut**](docs/Api/PassApi.md#passindexput) | **PUT** /api/pass | 
@@ -125,6 +126,7 @@ Class | Method | HTTP request | Description
  - [NewTemplate](docs/Model/NewTemplate.md)
  - [Pass](docs/Model/Pass.md)
  - [PassDetail](docs/Model/PassDetail.md)
+ - [PassEmail](docs/Model/PassEmail.md)
  - [Template](docs/Model/Template.md)
 
 
