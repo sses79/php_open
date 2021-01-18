@@ -41,15 +41,6 @@ Download the files and include `autoload.php`:
     require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
 ```
 
-## Tests
-
-To run the unit tests:
-
-```bash
-composer install
-./vendor/bin/phpunit
-```
-
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
