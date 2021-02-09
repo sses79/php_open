@@ -254,7 +254,7 @@ class PassApi
             );
         }
 
-        $resourcePath = '/api/passemail';
+        $resourcePath = '/api/passEmail';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

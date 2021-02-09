@@ -4,7 +4,7 @@ All URIs are relative to *http://passkit.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**passEmailIndexPost**](PassApi.md#passEmailIndexPost) | **POST** /api/passemail | 
+[**passEmailIndexPost**](PassApi.md#passEmailIndexPost) | **POST** /api/passEmail | 
 [**passIndexGet**](PassApi.md#passIndexGet) | **GET** /api/pass/{id} | 
 [**passIndexPost**](PassApi.md#passIndexPost) | **POST** /api/pass | 
 [**passIndexPut**](PassApi.md#passIndexPut) | **PUT** /api/pass | 
