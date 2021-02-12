@@ -60,7 +60,16 @@ class Credential implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'service_account' => 'string',
-        'google_issuer_id' => 'string'
+        'google_issuer_id' => 'string',
+        'project_id' => 'string',
+        'private_key_id' => 'string',
+        'private_key' => 'string',
+        'client_email' => 'string',
+        'client_id' => 'string',
+        'auth_uri' => 'string',
+        'token_uri' => 'string',
+        'auth_provider_x509_cert_url' => 'string',
+        'client_x509_cert_url' => 'string'
     ];
 
     /**
@@ -72,7 +81,16 @@ class Credential implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'service_account' => null,
-        'google_issuer_id' => null
+        'google_issuer_id' => null,
+        'project_id' => null,
+        'private_key_id' => null,
+        'private_key' => null,
+        'client_email' => null,
+        'client_id' => null,
+        'auth_uri' => null,
+        'token_uri' => null,
+        'auth_provider_x509_cert_url' => null,
+        'client_x509_cert_url' => null
     ];
 
     /**
@@ -105,7 +123,16 @@ class Credential implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'service_account' => 'serviceAccount',
-        'google_issuer_id' => 'googleIssuerId'
+        'google_issuer_id' => 'googleIssuerId',
+        'project_id' => 'projectId',
+        'private_key_id' => 'privateKeyId',
+        'private_key' => 'privateKey',
+        'client_email' => 'clientEmail',
+        'client_id' => 'clientId',
+        'auth_uri' => 'authUri',
+        'token_uri' => 'tokenUri',
+        'auth_provider_x509_cert_url' => 'authProviderX509CertUrl',
+        'client_x509_cert_url' => 'clientX509CertUrl'
     ];
 
     /**
@@ -117,7 +144,16 @@ class Credential implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'service_account' => 'setServiceAccount',
-        'google_issuer_id' => 'setGoogleIssuerId'
+        'google_issuer_id' => 'setGoogleIssuerId',
+        'project_id' => 'setProjectId',
+        'private_key_id' => 'setPrivateKeyId',
+        'private_key' => 'setPrivateKey',
+        'client_email' => 'setClientEmail',
+        'client_id' => 'setClientId',
+        'auth_uri' => 'setAuthUri',
+        'token_uri' => 'setTokenUri',
+        'auth_provider_x509_cert_url' => 'setAuthProviderX509CertUrl',
+        'client_x509_cert_url' => 'setClientX509CertUrl'
     ];
 
     /**
@@ -129,7 +165,16 @@ class Credential implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'service_account' => 'getServiceAccount',
-        'google_issuer_id' => 'getGoogleIssuerId'
+        'google_issuer_id' => 'getGoogleIssuerId',
+        'project_id' => 'getProjectId',
+        'private_key_id' => 'getPrivateKeyId',
+        'private_key' => 'getPrivateKey',
+        'client_email' => 'getClientEmail',
+        'client_id' => 'getClientId',
+        'auth_uri' => 'getAuthUri',
+        'token_uri' => 'getTokenUri',
+        'auth_provider_x509_cert_url' => 'getAuthProviderX509CertUrl',
+        'client_x509_cert_url' => 'getClientX509CertUrl'
     ];
 
     /**
@@ -196,6 +241,15 @@ class Credential implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['service_account'] = isset($data['service_account']) ? $data['service_account'] : null;
         $this->container['google_issuer_id'] = isset($data['google_issuer_id']) ? $data['google_issuer_id'] : null;
+        $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;
+        $this->container['private_key_id'] = isset($data['private_key_id']) ? $data['private_key_id'] : null;
+        $this->container['private_key'] = isset($data['private_key']) ? $data['private_key'] : null;
+        $this->container['client_email'] = isset($data['client_email']) ? $data['client_email'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['auth_uri'] = isset($data['auth_uri']) ? $data['auth_uri'] : null;
+        $this->container['token_uri'] = isset($data['token_uri']) ? $data['token_uri'] : null;
+        $this->container['auth_provider_x509_cert_url'] = isset($data['auth_provider_x509_cert_url']) ? $data['auth_provider_x509_cert_url'] : null;
+        $this->container['client_x509_cert_url'] = isset($data['client_x509_cert_url']) ? $data['client_x509_cert_url'] : null;
     }
 
     /**
@@ -207,6 +261,9 @@ class Credential implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -234,7 +291,7 @@ class Credential implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string|null
+     * @return string
      */
     public function getId()
     {
@@ -244,7 +301,7 @@ class Credential implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string|null $id ID
+     * @param string $id ID
      *
      * @return $this
      */
@@ -268,7 +325,7 @@ class Credential implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name Name
+     * @param string $name Name of Google Credential
      *
      * @return $this
      */
@@ -323,6 +380,222 @@ class Credential implements ModelInterface, ArrayAccess
     public function setGoogleIssuerId($google_issuer_id)
     {
         $this->container['google_issuer_id'] = $google_issuer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets project_id
+     *
+     * @return string|null
+     */
+    public function getProjectId()
+    {
+        return $this->container['project_id'];
+    }
+
+    /**
+     * Sets project_id
+     *
+     * @param string|null $project_id Project Id
+     *
+     * @return $this
+     */
+    public function setProjectId($project_id)
+    {
+        $this->container['project_id'] = $project_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets private_key_id
+     *
+     * @return string|null
+     */
+    public function getPrivateKeyId()
+    {
+        return $this->container['private_key_id'];
+    }
+
+    /**
+     * Sets private_key_id
+     *
+     * @param string|null $private_key_id Private Key Id
+     *
+     * @return $this
+     */
+    public function setPrivateKeyId($private_key_id)
+    {
+        $this->container['private_key_id'] = $private_key_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets private_key
+     *
+     * @return string|null
+     */
+    public function getPrivateKey()
+    {
+        return $this->container['private_key'];
+    }
+
+    /**
+     * Sets private_key
+     *
+     * @param string|null $private_key Private Key
+     *
+     * @return $this
+     */
+    public function setPrivateKey($private_key)
+    {
+        $this->container['private_key'] = $private_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_email
+     *
+     * @return string|null
+     */
+    public function getClientEmail()
+    {
+        return $this->container['client_email'];
+    }
+
+    /**
+     * Sets client_email
+     *
+     * @param string|null $client_email Client Email
+     *
+     * @return $this
+     */
+    public function setClientEmail($client_email)
+    {
+        $this->container['client_email'] = $client_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_id
+     *
+     * @return string|null
+     */
+    public function getClientId()
+    {
+        return $this->container['client_id'];
+    }
+
+    /**
+     * Sets client_id
+     *
+     * @param string|null $client_id Client Id
+     *
+     * @return $this
+     */
+    public function setClientId($client_id)
+    {
+        $this->container['client_id'] = $client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets auth_uri
+     *
+     * @return string|null
+     */
+    public function getAuthUri()
+    {
+        return $this->container['auth_uri'];
+    }
+
+    /**
+     * Sets auth_uri
+     *
+     * @param string|null $auth_uri Auth URI
+     *
+     * @return $this
+     */
+    public function setAuthUri($auth_uri)
+    {
+        $this->container['auth_uri'] = $auth_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets token_uri
+     *
+     * @return string|null
+     */
+    public function getTokenUri()
+    {
+        return $this->container['token_uri'];
+    }
+
+    /**
+     * Sets token_uri
+     *
+     * @param string|null $token_uri Token URI
+     *
+     * @return $this
+     */
+    public function setTokenUri($token_uri)
+    {
+        $this->container['token_uri'] = $token_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets auth_provider_x509_cert_url
+     *
+     * @return string|null
+     */
+    public function getAuthProviderX509CertUrl()
+    {
+        return $this->container['auth_provider_x509_cert_url'];
+    }
+
+    /**
+     * Sets auth_provider_x509_cert_url
+     *
+     * @param string|null $auth_provider_x509_cert_url Auth Provider X509 Cert Url
+     *
+     * @return $this
+     */
+    public function setAuthProviderX509CertUrl($auth_provider_x509_cert_url)
+    {
+        $this->container['auth_provider_x509_cert_url'] = $auth_provider_x509_cert_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_x509_cert_url
+     *
+     * @return string|null
+     */
+    public function getClientX509CertUrl()
+    {
+        return $this->container['client_x509_cert_url'];
+    }
+
+    /**
+     * Sets client_x509_cert_url
+     *
+     * @param string|null $client_x509_cert_url Client X509 Cert Url
+     *
+     * @return $this
+     */
+    public function setClientX509CertUrl($client_x509_cert_url)
+    {
+        $this->container['client_x509_cert_url'] = $client_x509_cert_url;
 
         return $this;
     }
